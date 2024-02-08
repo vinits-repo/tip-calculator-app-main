@@ -28,7 +28,7 @@ The goal of the challenge was to create a responsive tip calculator app with an 
 
 ### Links
 
-- [Live Site URL](https://your-live-site-url.com)
+- [Live Site URL](https://65c50858821a4231c1fa1841--vinits-tip-calculator-app-main.netlify.app/)
 
 ## Features
 
