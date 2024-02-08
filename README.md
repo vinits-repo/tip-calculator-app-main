@@ -55,7 +55,7 @@ The goal of the challenge was to create a responsive tip calculator app with an 
 
 ### Scripts
 
-- `/dist/script.js`: JavaScript file for dynamic functionality.
+- `/script.js`: JavaScript file for dynamic functionality.
 
 
 ### What I Learned
@@ -63,7 +63,6 @@ The goal of the challenge was to create a responsive tip calculator app with an 
 - JavaScript Event Handling: Responding to user interactions like button clicks and input changes.
 - DOM Manipulation: Dynamically updating the DOM for a real-time user experience.
 - CSS Flexbox and Grid: Creating responsive layouts for different screen sizes.
-- Form Validation: Ensuring accurate user inputs with JavaScript.
 - GitHub Basics: Setting up a repository, commits, branches, and pushing changes.
 - Problem-Solving: Enhanced debugging skills and overcoming coding challenges.
 
