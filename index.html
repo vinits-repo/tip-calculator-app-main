@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      .active {
+        background-color: hsl(172, 67%, 45%);
+        color: hsl(183, 100%, 15%);
+      }
+      .error {
+        outline: 2px solid orangered;
+        outline-offset: -2px;
+      }
+    </style>
+  </head>
+  <body class="font-Space-Mono m-0 p-0 box-border bg-light-grayish-cyan">
+    <main class="flex flex-col items-center content-center">
+      <!-- Heading -->
+      <h1
+        class="container-title text-center text-very-dark-cyan relative m-10 sm:mt-20 text-2xl tracking-[0.63rem] text-opacity-75"
+      >
+        SPLI <br />
+        TTER
+      </h1>
+
+      <div
+        class="wrapper flex flex-col md:flex-row bg-white rounded-3xl sm:m-8 sm:ml-20 sm:mr-20 sm:max-[400px] md:max-w-[680px] lg:max-w-[920px] lg:h-[481px]"
+      >
+        <!-- card-1 -->
+        <!-- Input Section starts here -->
+        <div class="input-data m-8 md:p-2 md:mr-0 md:w-[50%]">
+          <!-- Bill will display here -->
+          <div class="bill relative">
+            <p class="text-dark-grayish-cyan">Bill</p>
+            <!-- input of total bill -->
+            <div class="bill-input w-full relative mt-2 top-1/2 transform">
+              <img
+                src="/images/icon-dollar.svg"
+                alt="icon-dollar"
+                class="absolute pl-4 top-1/2 transform -translate-y-1/2"
+              />
+              <input
+                type="text"
+                maxlength="6"
+                onkeypress="return event.charCode>=46 && event.charCode<=57"
+                name="bill"
+                id="bill"
+                placeholder="0"
+                class="bg-very-light-grayish-cyan focus:outline-strong-cyan pl-8 text-xl text-right w-full hover:cursor-pointer text-very-dark-cyan rounded-md p-2"
+              />
+            </div>
+            <span
+              id="span-bill"
+              class="span-bill hidden right-0 absolute bottom-12 text-[#FF4500]"
+              >Can't be zero</span
+            >
+          </div>
+
+          <!-- Tip selection area starts here -->
+          <div class="select-tip mt-8 md:mt-12">
+            <p class="text-dark-grayish-cyan">Select Tip %</p>
+            <!-- tip buttons and custom input -->
+            <div
+              class="tip-btn mt-3 grid grid-cols-2 mx-auto gap-3 md:gap-4 md:grid-cols-3"
+            >
+              <button
+                id="btn5"
+                value="5"
+                class="btn bg-very-dark-cyan text-white rounded-md p-2 text-2xl hover:bg-strong-cyan-light hover:text-very-dark-cyan"
+              >
+                5%
+              </button>
+              <button
+                id="btn10"
+                value="10"
+                class="btn bg-very-dark-cyan text-white rounded-md p-2 text-2xl hover:bg-strong-cyan-light hover:text-very-dark-cyan"
+              >
+                10%
+              </button>
+              <button
+                id="btn15"
+                value="15"
+                class="btn bg-very-dark-cyan text-white rounded-md p-2 text-2xl hover:bg-strong-cyan-light hover:text-very-dark-cyan"
+              >
+                15%
+              </button>
+              <button
+                id="btn25"
+                value="25"
+                class="btn bg-very-dark-cyan text-white rounded-md p-2 text-2xl hover:bg-strong-cyan-light hover:text-very-dark-cyan"
+              >
+                25%
+              </button>
+              <button
+                id="btn50"
+                value="50"
+                class="btn bg-very-dark-cyan text-white rounded-md p-2 text-2xl hover:bg-strong-cyan-light hover:text-very-dark-cyan"
+              >
+                50%
+              </button>
+
+              <input
+                type="text"
+                maxlength="3"
+                onkeypress="return event.charCode>=46 && event.charCode<=57"
+                name="custom"
+                id="custom"
+                placeholder="Custom"
+                class="text-2xl hover:cursor-pointer text-very-dark-cyan pr-3 focus:outline-strong-cyan rounded-md text-right"
+              />
+            </div>
+          </div>
+
+          <!-- choose number of people here -->
+          <div id="peopleDiv" class="numOfPeople mt-8 md:mt-12 relative">
+            <p class="text-dark-grayish-cyan">Number of People</p>
+            <!-- put number of people here -->
+            <div class="input-for-people relative mt-2">
+              <img
+                src="/images/icon-person.svg"
+                alt="icon-person"
+                class="absolute pl-4 top-1/2 transform -translate-y-1/2"
+              />
+              <input
+                type="text"
+                maxlength="3"
+                onkeypress="return event.charCode>=46 && event.charCode<=57"
+                name="people"
+                id="people"
+                placeholder="0"
+                class="bg-very-light-grayish-cyan focus:outline-strong-cyan pl-8 text-xl text-right w-full hover:cursor-pointer text-very-dark-cyan rounded-md p-2"
+              />
+            </div>
+            <span
+              id="p-bill"
+              class="p-bill hidden right-0 absolute bottom-12 text-[#FF4500]"
+              >Can't be zero</span
+            >
+          </div>
+        </div>
+
+        <!-- card-2 -->
+        <!-- Result section starts here -->
+        <div
+          class="result m-8 mt-4 md:mt-8 bg-very-dark-cyan md:w-[50%] rounded-xl"
+        >
+          <div class="m-8 flex flex-col justify-between h-[85%]">
+            <div>
+              <section class="text-white flex mt-4 md:mt-6">
+                <h2>
+                  Tip Amount <br /><span class="text-dark-grayish-cyan"
+                    >/ person</span
+                  >
+                </h2>
+                <div class="flex-grow"></div>
+                <h3
+                  class="result_tip_amount_value text-3xl text-strong-cyan"
+                  id="tip_amount"
+                >
+                  $0.00
+                </h3>
+              </section>
+              <section class="text-white flex mt-8 md:mt-10">
+                <h2>
+                  Total <br /><span class="text-dark-grayish-cyan"
+                    >/ person</span
+                  >
+                </h2>
+                <div class="flex-grow"></div>
+                <h3
+                  class="result_tip_amount_value text-3xl text-strong-cyan"
+                  id="total_amount"
+                >
+                  $0.00
+                </h3>
+              </section>
+            </div>
+            <button
+              id="resetBtn"
+              class="uppercase tracking-wider text-xl text-very-dark-cyan bg-medium-teal w-full p-3 rounded-md hover:bg-strong-cyan-light mt-10"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution text-center text-grayish-cyan">
+      Challenge by
+      <a
+        class="text-very-dark-cyan"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-very-dark-cyan"
+        href="https://github.com/vinits-repo"
+        target="_blank"
+        >Vinit Yadav</a
+      >.
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
