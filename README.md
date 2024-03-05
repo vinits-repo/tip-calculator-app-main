@@ -45,7 +45,6 @@ The goal of the challenge was to create a responsive tip calculator app with an 
 5. View the calculated tip amount and total per person.
 6. Use the "Reset" button to start over.
 
-## Development
 
 ### Built With
 
