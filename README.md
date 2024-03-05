@@ -10,9 +10,6 @@ This project is a solution to the [Tip Calculator App challenge](https://www.fro
   - [Links](#links)
 - [Features](#features)
 - [How to Use](#how-to-use)
-- [Development](#development)
-  - [Built With](#built-with)
-  - [Scripts](#scripts)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
